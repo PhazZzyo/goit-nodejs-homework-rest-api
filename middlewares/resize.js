@@ -2,11 +2,12 @@
 const Jimp = require("jimp");
 
 const resize = (req, res, next) => {
-  const { path, originalname } = req.file;
+  console.log(req.file.path);
+  const { path } = req.file;
   Jimp.read(path)
-    .then((avatar) => {
-      avatar.resize(250, 250);
-      console.log(`Avatar :${originalname} has been resized`);
+    .then((image) => {
+      image.resize(250, 250);
+      image.write(path);
       next();
     })
     .catch((err) => next(err));
