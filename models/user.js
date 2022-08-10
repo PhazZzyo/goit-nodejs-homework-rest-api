@@ -7,7 +7,7 @@ const userSchema = Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: false,
     },
     email: {
       type: String,
@@ -27,7 +27,7 @@ const userSchema = Schema(
     },
     avatarURL: {
       type: String,
-      required: true,
+      required: false,
     },
     token: {
       type: String,
