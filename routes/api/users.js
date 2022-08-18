@@ -5,7 +5,9 @@ const ctrl = require(`${basedir}/controllers/users`);
 const { auth, upload, resize } = require(`${basedir}/middlewares`);
 const { ctrlWrapper } = require(`${basedir}/utils`);
 
-router.patch("/", auth, ctrlWrapper(ctrl.updateSubscriptionUser));
+router.get("/verify/:verificationToken", ctrlWrapper(ctrl.verifyEmail));
+router.post("/verify", ctrlWrapper(ctrl.verifyEmail));
+router.patch("/", auth, ctrlWrapper(ctrl.resendVerifyEmail));
 router.patch(
   "/avatars",
   auth,
