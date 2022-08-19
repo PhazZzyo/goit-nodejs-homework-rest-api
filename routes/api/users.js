@@ -6,8 +6,8 @@ const { auth, upload, resize } = require(`${basedir}/middlewares`);
 const { ctrlWrapper } = require(`${basedir}/utils`);
 
 router.get("/verify/:verificationToken", ctrlWrapper(ctrl.verifyEmail));
-router.post("/verify", ctrlWrapper(ctrl.verifyEmail));
-router.patch("/", auth, ctrlWrapper(ctrl.resendVerifyEmail));
+router.post("/verify", ctrlWrapper(ctrl.resendVerifyEmail));
+router.patch("/", auth, ctrlWrapper(ctrl.updateSubscriptionUser));
 router.patch(
   "/avatars",
   auth,
