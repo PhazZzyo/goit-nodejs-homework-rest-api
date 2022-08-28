@@ -1,3 +1,4 @@
+# docker file
 # docker run -p 3000:3000 -d phazzzy/phonebook-app-rest-api
 FROM node:lts-alpine
 ENV NODE_ENV=production
